@@ -3,150 +3,1075 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Congratulations Giveaway</title>
+
+<title>Lucky Giveaway</title>
 
 <style>
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: #111;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #240000, #b00000);
 }
 
-.container {
-    max-width: 430px;
-    margin: 60px auto;
+
+/* =========================
+   COMMON
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+
     background: white;
-    padding: 30px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 0 30px red;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.4);
 }
 
 .banner {
-    background: red;
+    background: #e60000;
     color: white;
+
+    text-align: center;
+
     padding: 15px;
+
     font-weight: bold;
 }
 
-h1 {
-    color: red;
+.demo-label {
+    background: #fff3cd;
+    color: #856404;
+
+    text-align: center;
+
+    padding: 9px;
+
+    font-size: 12px;
+}
+
+.login-content {
+    padding: 30px;
+
+    text-align: center;
+}
+
+.gift {
+    font-size: 65px;
+}
+
+.login-content h1 {
+    color: #e60000;
+
     font-size: 35px;
+
+    margin-top: 5px;
 }
 
 .prize {
-    font-size: 25px;
+    font-size: 28px;
+
     font-weight: bold;
+
+    margin: 15px 0;
+}
+
+.description {
+    color: #555;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+
+/* TIMER */
+
+.timer-label {
+    color: #777;
+
+    font-size: 13px;
 }
 
 .timer {
-    color: red;
-    font-size: 40px;
+    color: #e60000;
+
+    font-size: 38px;
+
     font-weight: bold;
-    margin: 20px;
+
+    margin: 5px 0 20px;
 }
 
-input {
+
+/* INPUT */
+
+.input-box {
+    text-align: left;
+
+    margin-bottom: 13px;
+}
+
+.input-box label {
+    display: block;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+.input-box input {
     width: 100%;
+
     padding: 13px;
-    margin: 7px 0;
+
     border: 1px solid #aaa;
-    border-radius: 6px;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
 }
 
-button {
+.input-box input:focus {
+    border-color: #e60000;
+}
+
+
+/* BUTTON */
+
+.main-button {
     width: 100%;
+
     padding: 15px;
-    margin-top: 10px;
-    background: red;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e60000;
+
     color: white;
-    border: 0;
-    border-radius: 6px;
+
+    font-size: 16px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
-.warning {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #777;
+.main-button:hover {
+    background: #c40000;
 }
+
+
+/* NOTE */
+
+.note {
+    margin-top: 20px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    background: #f3f4f6;
+}
+
+
+/* HEADER */
+
+.header {
+    background: #e60000;
+
+    color: white;
+
+    padding: 18px 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+.demo-badge {
+    background: rgba(255,255,255,0.2);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+}
+
+
+/* MAIN */
+
+.dashboard-main {
+    max-width: 700px;
+
+    margin: 35px auto;
+
+    padding: 20px;
+}
+
+
+/* WELCOME */
+
+.welcome {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.welcome h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #666;
+}
+
+
+/* CARD */
+
+.dashboard-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+
+/* PRIZE CARD */
+
+.prize-card {
+    text-align: center;
+}
+
+.trophy {
+    font-size: 60px;
+}
+
+.prize-title {
+    font-size: 20px;
+
+    margin-top: 10px;
+}
+
+.dashboard-prize {
+    color: #e60000;
+
+    font-size: 36px;
+
+    font-weight: bold;
+
+    margin: 10px;
+}
+
+
+/* SHARE */
+
+.share-title {
+    text-align: center;
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+.share-description {
+    text-align: center;
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+
+/* COUNTER */
+
+.counter {
+    text-align: center;
+
+    color: #e60000;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+}
+
+
+/* PROGRESS */
+
+.progress {
+    width: 100%;
+
+    height: 18px;
+
+    background: #ddd;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    background: #e60000;
+
+    transition: 0.4s;
+}
+
+
+/* SHARE BUTTON */
+
+.share-button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e60000;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.share-button:hover {
+    background: #c40000;
+}
+
+.share-button:disabled {
+    background: #888;
+
+    cursor: not-allowed;
+}
+
+
+/* STATUS */
+
+.status {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #fff3cd;
+
+    color: #856404;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    line-height: 1.5;
+}
+
+.status.success {
+    background: #d4edda;
+
+    color: #155724;
+}
+
+
+/* STEPS */
+
+.steps {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.step {
+    flex: 1;
+
+    text-align: center;
+
+    padding: 12px 5px;
+
+    border-radius: 8px;
+
+    background: #eee;
+
+    font-size: 13px;
+}
+
+.step.active {
+    background: #e60000;
+
+    color: white;
+}
+
+
+/* NOTICE */
+
+.notice {
+    text-align: center;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .dashboard-main {
+        margin: 20px auto;
+
+        padding: 12px;
+    }
+
+    .dashboard-card {
+        padding: 22px;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<div class="container">
 
-    <div class="banner">
-        ⚠️ LIMITED TIME GIVEAWAY ⚠️
+<!-- =====================================================
+     PAGE 1 — GIVEAWAY LOGIN
+===================================================== -->
+
+<section id="loginPage" class="login-page">
+
+    <div class="login-card">
+
+        <div class="banner">
+            🎉 LIMITED TIME GIVEAWAY 🎉
+        </div>
+
+        <div class="demo-label">
+            Cybersecurity Testing Simulation
+        </div>
+
+        <div class="login-content">
+
+            <div class="gift">
+                🎁
+            </div>
+
+            <h1>
+                YOU WON!
+            </h1>
+
+            <div class="prize">
+                ₹50,000
+            </div>
+
+            <p class="description">
+                Congratulations! You have been selected
+                for our special giveaway.
+            </p>
+
+
+            <div class="timer-label">
+                Offer expires in
+            </div>
+
+            <div class="timer" id="timer">
+                05:00
+            </div>
+
+
+            <form id="giveawayForm">
+
+                <div class="input-box">
+
+                    <label>
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        maxlength="50"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="main-button">
+
+                    CONTINUE TO GIVEAWAY →
+
+                </button>
+
+            </form>
+
+
+            <p class="note">
+
+                This is an educational cybersecurity
+                simulation.
+
+                <br>
+
+                No information is transmitted or stored.
+
+            </p>
+
+        </div>
+
     </div>
 
-    <h1>YOU WON!</h1>
+</section>
 
-    <p class="prize">🎁 ₹50,000 CASH PRIZE 🎁</p>
 
-    <p>Congratulations! You have been selected for our special giveaway.</p>
 
-    <div class="timer" id="timer">05:00</div>
+<!-- =====================================================
+     PAGE 2 — DASHBOARD
+===================================================== -->
 
-    <form id="form">
+<section id="dashboardPage" class="dashboard hidden">
 
-        <input type="text"
-               placeholder="Enter your name"
-               required>
 
-        <input type="email"
-               placeholder="Enter your email"
-               required>
+    <!-- HEADER -->
 
-        <button type="submit">
-            CLAIM YOUR PRIZE NOW
-        </button>
+    <header class="header">
 
-    </form>
+        <div class="logo">
+            🎁 Lucky Giveaway
+        </div>
 
-    <div class="warning">
-        Cybersecurity testing simulation.
-        Do not enter real information.
-    </div>
+        <div class="demo-badge">
+            CYBERSECURITY DEMO
+        </div>
 
-</div>
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard-main">
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome">
+
+            <h1>
+                Welcome,
+                <span id="userName">
+                    Participant
+                </span>
+                ! 🎉
+            </h1>
+
+            <p>
+                Complete the giveaway steps below.
+            </p>
+
+        </div>
+
+
+
+        <!-- PRIZE -->
+
+        <div class="dashboard-card prize-card">
+
+            <div class="trophy">
+                🏆
+            </div>
+
+            <div class="prize-title">
+                Your Possible Prize
+            </div>
+
+            <div class="dashboard-prize">
+                ₹50,000
+            </div>
+
+            <p>
+                Complete the demonstration steps
+                to finish your entry.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHARE CARD -->
+
+        <div class="dashboard-card">
+
+            <h2 class="share-title">
+                📤 Share With 5 People
+            </h2>
+
+            <p class="share-description">
+
+                Complete
+                <b>5 simulated shares</b>
+                to continue your giveaway entry.
+
+            </p>
+
+
+            <!-- COUNTER -->
+
+            <div class="counter">
+
+                <span id="shareCount">
+                    0
+                </span>
+
+                / 5
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="progress">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar">
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                id="shareButton"
+                class="share-button"
+                onclick="simulateShare()">
+
+                📤 SIMULATE SHARE
+
+            </button>
+
+
+            <!-- STATUS -->
+
+            <div
+                id="status"
+                class="status">
+
+                Complete 5 simulated shares
+                to continue.
+
+            </div>
+
+
+            <!-- STEPS -->
+
+            <div class="steps">
+
+                <div class="step active">
+
+                    ✓ Registration
+
+                </div>
+
+                <div
+                    id="shareStep"
+                    class="step">
+
+                    2. Share
+
+                </div>
+
+                <div
+                    id="completeStep"
+                    class="step">
+
+                    3. Complete
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SECURITY NOTICE -->
+
+        <div class="dashboard-card notice">
+
+            ⚠️ <b>Cybersecurity Testing Simulation</b>
+
+            <br><br>
+
+            This page does not send messages,
+            access contacts, or collect credentials.
+
+            <br>
+
+            All sharing actions are simulated locally
+            inside the browser.
+
+        </div>
+
+
+    </main>
+
+</section>
+
+
 
 <script>
-let time = 300;
 
-setInterval(function () {
 
-    if (time <= 0) return;
+/* =====================================================
+   TIMER
+===================================================== */
 
-    time--;
+let timeLeft = 300;
 
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+const timer =
+    document.getElementById("timer");
 
-    document.getElementById("timer").innerText =
-        String(minutes).padStart(2, "0") +
-        ":" +
-        String(seconds).padStart(2, "0");
 
-}, 1000);
+const timerInterval =
+    setInterval(function() {
 
-document.getElementById("form").addEventListener("submit", function(e) {
+        let minutes =
+            Math.floor(timeLeft / 60);
 
-    e.preventDefault();
+        let seconds =
+            timeLeft % 60;
 
-    alert(
-        "SECURITY TEST\n\n" +
-        "Suspicious giveaway simulation detected.\n\n" +
-        "No information was collected."
-    );
+
+        timer.textContent =
+            String(minutes).padStart(2, "0")
+            + ":" +
+            String(seconds).padStart(2, "0");
+
+
+        if (timeLeft <= 0) {
+
+            clearInterval(timerInterval);
+
+            timer.textContent = "00:00";
+
+        }
+
+
+        timeLeft--;
+
+    }, 1000);
+
+
+
+/* =====================================================
+   LOGIN → DASHBOARD
+===================================================== */
+
+document
+.getElementById("giveawayForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
+
+
+    const email =
+        document
+        .getElementById("email")
+        .value
+        .trim();
+
+
+    if (name.length < 2) {
+
+        alert("Please enter a valid name.");
+
+        return;
+
+    }
+
+
+    if (!email.includes("@")) {
+
+        alert("Please enter a valid email.");
+
+        return;
+
+    }
+
+
+    /*
+       Show name on dashboard
+    */
+
+    document
+    .getElementById("userName")
+    .textContent = name;
+
+
+    /*
+       HIDE LOGIN
+    */
+
+    document
+    .getElementById("loginPage")
+    .classList.add("hidden");
+
+
+    /*
+       SHOW DASHBOARD
+    */
+
+    document
+    .getElementById("dashboardPage")
+    .classList.remove("hidden");
+
+
+    /*
+       Scroll to top
+    */
+
+    window.scrollTo(0, 0);
 
 });
+
+
+
+/* =====================================================
+   SHARE SYSTEM
+===================================================== */
+
+let shares = 0;
+
+const maxShares = 5;
+
+
+function simulateShare() {
+
+
+    if (shares >= maxShares) {
+
+        return;
+
+    }
+
+
+    shares++;
+
+
+    /*
+       Counter
+    */
+
+    document
+    .getElementById("shareCount")
+    .textContent = shares;
+
+
+    /*
+       Progress
+    */
+
+    const percentage =
+        (shares / maxShares) * 100;
+
+
+    document
+    .getElementById("progressBar")
+    .style.width =
+        percentage + "%";
+
+
+    /*
+       Activate share step
+    */
+
+    if (shares >= 1) {
+
+        document
+        .getElementById("shareStep")
+        .classList.add("active");
+
+    }
+
+
+    /*
+       Status
+    */
+
+    const status =
+        document.getElementById("status");
+
+
+    if (shares < maxShares) {
+
+        const remaining =
+            maxShares - shares;
+
+
+        status.textContent =
+            "Simulated share completed. "
+            + remaining +
+            " more required.";
+
+    }
+
+
+    /*
+       COMPLETE
+    */
+
+    if (shares === maxShares) {
+
+
+        status.textContent =
+            "🎉 Giveaway simulation completed successfully!";
+
+
+        status.classList.add("success");
+
+
+        document
+        .getElementById("shareButton")
+        .disabled = true;
+
+
+        document
+        .getElementById("shareButton")
+        .textContent =
+            "✓ COMPLETED";
+
+
+        document
+        .getElementById("completeStep")
+        .classList.add("active");
+
+    }
+
+}
+
 </script>
 
 </body>
