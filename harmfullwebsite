@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congratulations Giveaway</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+}
+
+.container {
+    max-width: 430px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 30px red;
+}
+
+.banner {
+    background: red;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+}
+
+h1 {
+    color: red;
+    font-size: 35px;
+}
+
+.prize {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.timer {
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 7px 0;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background: red;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.warning {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="banner">
+        ⚠️ LIMITED TIME GIVEAWAY ⚠️
+    </div>
+
+    <h1>YOU WON!</h1>
+
+    <p class="prize">🎁 ₹50,000 CASH PRIZE 🎁</p>
+
+    <p>Congratulations! You have been selected for our special giveaway.</p>
+
+    <div class="timer" id="timer">05:00</div>
+
+    <form id="form">
+
+        <input type="text"
+               placeholder="Enter your name"
+               required>
+
+        <input type="email"
+               placeholder="Enter your email"
+               required>
+
+        <button type="submit">
+            CLAIM YOUR PRIZE NOW
+        </button>
+
+    </form>
+
+    <div class="warning">
+        Cybersecurity testing simulation.
+        Do not enter real information.
+    </div>
+
+</div>
+
+<script>
+let time = 300;
+
+setInterval(function () {
+
+    if (time <= 0) return;
+
+    time--;
+
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    document.getElementById("timer").innerText =
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(seconds).padStart(2, "0");
+
+}, 1000);
+
+document.getElementById("form").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    alert(
+        "SECURITY TEST\n\n" +
+        "Suspicious giveaway simulation detected.\n\n" +
+        "No information was collected."
+    );
+
+});
+</script>
+
+</body>
+</html>
